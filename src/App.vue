@@ -10,6 +10,7 @@
     </div>
     <div v-else>
       <h3>{{greeting}} {{name}}</h3>
+      <p>So... what are we going to get done today? :)</p>
       <tasks></tasks>
     </div>
   </div>
@@ -38,7 +39,6 @@ export default {
   },
   beforeMount: function () {
     let d = new Date()
-    console.log(d.getHours())
     if (d.getHours() >= 12 && d.getHours() <= 24) {
       this.greeting = 'Good Afternoon'
     } else {
@@ -56,5 +56,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  margin: 0 auto;
 }
 </style>
