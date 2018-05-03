@@ -2,21 +2,23 @@
   <div class="tasks">
     <div class="addtask">
       <div class="submitForm">
-        <input type="text" v-model="newTask.taskName" required>
-        <input id="desc" type="text" v-model="newTask.taskDesc">
-        <br>
+        <label for="taskname">Task name:</label><br>
+        <input type="text" id="taskname" v-model="newTask.taskName" placeholder="Enter task name"><br>
+        <label for="taskdesc">Task description (optional):</label><br>
+        <input id="taskdesc" type="text" v-model="newTask.taskDesc" placeholder="Enter task description"><br>
         <button id="add" v-on:click="submitTask">Submit</button>
       </div>
     </div>
-    <div v-if="tasks.length === 0">
+    <div v-if="tasks.length === 0" class="notasks">
       <p>No tasks</p>
     </div>
     <div v-else class="tasklist">
-      <ol>
-        <li v-for="task in tasks">
-          <p>{{task.taskName}} : {{task.taskDesc}}</p>
-        </li>
-      </ol>
+      <div v-for="task in tasks" class="card" style="width: 35rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{task.taskName}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{task.taskDesc}}</h6>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -48,19 +50,34 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .tasklist {
+  margin-top: 40px;
   margin: 0 auto;
   width: 80%;
-}
-
-#desc {
-  width: 50%
+  background-color: #c2c6ce;
+  border-radius: 3px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 
 #add {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .submitform {
   margin-top: 20px;
+}
+
+#taskname {
+  width: 40%;
+}
+
+.notasks {
+  margin-top: 40px;
+}
+
+.card {
+  margin: 0 auto;
+  margin-top: 9px;
 }
 </style>

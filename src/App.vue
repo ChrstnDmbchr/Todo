@@ -4,7 +4,7 @@
     <div v-if="!name">
       <h3>Hey! Please enter your name</h3>
       <form v-on:submit="submitName">
-        <input type="text" v-model="newName" placeholder="Enter name">
+        <input id="name" type="text" v-model="newName" placeholder="Enter name"><br>
         <input type="submit" value="Submit">
       </form>
     </div>
@@ -57,5 +57,19 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   margin: 0 auto;
+}
+
+input[type=text], select {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#name {
+  width:20%;
 }
 </style>
