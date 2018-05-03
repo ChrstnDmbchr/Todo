@@ -1,5 +1,6 @@
 <template>
   <div class="tasks">
+    <p>[ this is the place to add tasks ]</p>
   </div>
 </template>
 

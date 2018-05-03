@@ -9,9 +9,9 @@
       </form>
     </div>
     <div v-else>
-      <h3>Hey {{name}}</h3>
+      <h3>{{greeting}} {{name}}</h3>
+      <tasks></tasks>
     </div>
-    <tasks></tasks>
   </div>
 </template>
 
@@ -26,13 +26,23 @@ export default {
   data () {
     return {
       name: '',
-      newName: ''
+      newName: '',
+      greeting: ''
     }
   },
   methods: {
     submitName: function(e) {
       this.name = this.newName
       e.preventDefault();
+    }
+  },
+  beforeMount: function () {
+    let d = new Date()
+    console.log(d.getHours())
+    if (d.getHours() >= 12 && d.getHours() <= 24) {
+      this.greeting = 'Good Afternoon'
+    } else {
+      this.greeting = 'Good Morning'
     }
   }
 }
