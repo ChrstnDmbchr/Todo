@@ -53,7 +53,7 @@ export default {
   margin-top: 40px;
   margin: 0 auto;
   width: 80%;
-  background-color: #c2c6ce;
+  background-color: #e3e5e8;
   border-radius: 3px;
   padding-top: 9px;
   padding-bottom: 9px;
