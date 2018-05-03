@@ -2,8 +2,6 @@
 
 - [x] Todo: make Todo app
 
-> A Vue.js project
-
 ## Build Setup
 
 ``` bash
