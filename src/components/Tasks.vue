@@ -6,7 +6,7 @@
         <input type="text" id="taskname" v-model="newTask.taskName" placeholder="Enter task name"><br>
         <label for="taskdesc">Task description (optional):</label><br>
         <input id="taskdesc" type="text" v-model="newTask.taskDesc" placeholder="Enter task description"><br>
-        <button id="add" v-on:click="submitTask">Submit</button>
+        <button id="add" class="btn btn-dark" v-on:click="submitTask">Submit</button>
       </div>
     </div>
     <div v-if="tasks.length === 0" class="notasks">

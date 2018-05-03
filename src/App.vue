@@ -5,7 +5,7 @@
       <h3>Hey! Please enter your name</h3>
       <form v-on:submit="submitName">
         <input id="name" type="text" v-model="newName" placeholder="Enter name"><br>
-        <input type="submit" value="Submit">
+        <button type="submit" class="btn btn-dark">Submit</button>
       </form>
     </div>
     <div v-else>
