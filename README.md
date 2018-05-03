@@ -1,4 +1,6 @@
-# todo
+# Todo
+
+- [x] Todo: make Todo app
 
 > A Vue.js project
 
