@@ -15,6 +15,7 @@
     <div v-else class="tasklist">
       <div v-for="task in tasks" class="card" style="width: 35rem;">
         <div class="card-body">
+          <button class="deluser" v-on:click="deleteTask">x</button>
           <h5 class="card-title">{{task.taskName}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{task.taskDesc}}</h6>
         </div>
@@ -42,6 +43,9 @@ export default {
         taskDesc: this.newTask.taskDesc
       }
       this.tasks.push(addTask);
+    },
+    deleteTask: function () {
+      this.tasks.splice(this.tasks.indexOf(this.taskName, 1))
     }
   }
 };
@@ -69,6 +73,10 @@ export default {
 }
 
 #taskname {
+  width: 20%;
+}
+
+#taskdesc {
   width: 40%;
 }
 
@@ -79,5 +87,13 @@ export default {
 .card {
   margin: 0 auto;
   margin-top: 9px;
+}
+
+.deluser {
+  position: absolute;
+  border-radius: 12px;
+  margin-left: 43%;
+  background-color: #b51c4d;
+  color: white;
 }
 </style>
