@@ -3,7 +3,7 @@
     <h1>ToDo App</h1>
     <div v-if="!name">
       <h3>Hey! Please enter your name</h3>
-      <form v-on:submit="submitName">
+      <form @submit.prevent="submitName">
         <input id="name" type="text" v-model="newName" placeholder="Enter name"><br>
         <button type="submit" class="btn btn-dark">Submit</button>
       </form>
@@ -34,7 +34,6 @@ export default {
   methods: {
     submitName: function(e) {
       this.name = this.newName
-      e.preventDefault();
     }
   },
   beforeMount: function () {

@@ -1,13 +1,13 @@
 <template>
   <div class="tasks">
     <div class="addtask">
-      <div class="submitForm">
+      <form @submit.prevent="submitTask" class="submitForm">
         <label for="taskname">Task name:</label><br>
-        <input type="text" id="taskname" v-model="newTask.taskName" placeholder="Enter task name"><br>
+        <input type="text" id="taskname" v-model="newTask.taskName" placeholder="Enter task name" required><br>
         <label for="taskdesc">Task description (optional):</label><br>
         <input id="taskdesc" type="text" v-model="newTask.taskDesc" placeholder="Enter task description"><br>
-        <button id="add" class="btn btn-dark" v-on:click="submitTask">Submit</button>
-      </div>
+        <button type="submit" id="add" class="btn btn-dark">Submit</button>
+      </form>
     </div>
     <div v-if="tasks.length === 0" class="notasks">
       <p>No tasks</p>
@@ -15,7 +15,7 @@
     <div v-else class="tasklist">
       <div v-for="task in tasks" class="card" style="width: 35rem;">
         <div class="card-body">
-          <i class="far fa-times-circle deluser" v-on:click="deleteTask"></i>
+          <i class="far fa-times-circle deluser" v-on:click="deleteTask(task)"></i>
           <h5 class="card-title">{{task.taskName}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{task.taskDesc}}</h6>
         </div>
@@ -46,8 +46,8 @@ export default {
       this.newTask.taskName = '';
       this.newTask.taskDesc = '';
     },
-    deleteTask: function () {
-      this.tasks.splice(this.tasks.indexOf(this.taskName, 1))
+    deleteTask: function (task) {
+      this.tasks.splice(this.tasks.indexOf(task), 1)
     }
   }
 };
