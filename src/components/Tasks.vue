@@ -15,7 +15,7 @@
     <div v-else class="tasklist">
       <div v-for="task in tasks" class="card" style="width: 35rem;">
         <div class="card-body">
-          <button class="deluser" v-on:click="deleteTask">x</button>
+          <i class="far fa-times-circle deluser" v-on:click="deleteTask"></i>
           <h5 class="card-title">{{task.taskName}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{task.taskDesc}}</h6>
         </div>
