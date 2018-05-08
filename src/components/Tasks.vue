@@ -43,6 +43,8 @@ export default {
         taskDesc: this.newTask.taskDesc
       }
       this.tasks.push(addTask);
+      this.newTask.taskName = '';
+      this.newTask.taskDesc = '';
     },
     deleteTask: function () {
       this.tasks.splice(this.tasks.indexOf(this.taskName, 1))
