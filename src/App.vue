@@ -4,7 +4,7 @@
     <div v-if="!name">
       <h3>Hey! Please enter your name</h3>
       <form @submit.prevent="submitName">
-        <input id="name" type="text" v-model="newName" placeholder="Enter name"><br>
+        <input id="name" type="text" v-model="newName" placeholder="Enter name" required><br>
         <button type="submit" class="btn btn-dark">Submit</button>
       </form>
     </div>
