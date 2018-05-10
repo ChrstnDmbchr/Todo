@@ -2,7 +2,7 @@
 
 - [x] Todo: make Todo app
 
-Additional feature: 
+Additional features: 
 
 - [ ] Postrgres database for persistant data
 - [ ] Support for multiple users
